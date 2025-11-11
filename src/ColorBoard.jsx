@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import testSvg from "/test.svg";
 import { colors } from "./ColorPalette";
 
 const ColoringBoard = () => {
@@ -6,7 +7,7 @@ const ColoringBoard = () => {
   const svgContainerRef = useRef(null);
 
   useEffect(() => {
-    fetch("/test.svg")
+    fetch(testSvg)
       .then((res) => res.text())
       .then((data) => {
         if (svgContainerRef.current) {
